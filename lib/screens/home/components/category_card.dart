@@ -7,8 +7,8 @@ import '../../../size_config.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
-    Key key,
     @required this.category,
+    Key key,
   }) : super(key: key);
 
   final Category category;
