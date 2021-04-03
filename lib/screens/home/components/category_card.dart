@@ -42,7 +42,7 @@ class CategoryCard extends StatelessWidget {
                         TitleText(title: category.title),
                         SizedBox(height: defaultSize),
                         Text(
-                          "${category.numOfProducts}+ Products",
+                          '${category.numOfProducts}+ Products',
                           style: TextStyle(
                             color: kTextColor.withOpacity(0.6),
                           ),
@@ -59,7 +59,7 @@ class CategoryCard extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 1.15,
                   child: FadeInImage.assetNetwork(
-                    placeholder: "assets/spinner.gif",
+                    placeholder: 'assets/spinner.gif',
                     image: category.image,
                   ),
                 ),
@@ -75,21 +75,20 @@ class CategoryCard extends StatelessWidget {
 class CategoryCustomShape extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    Path path = Path();
-    double height = size.height;
-    double width = size.width;
-    double cornerSize = 30;
+    final height = size.height;
+    final width = size.width;
+    const cornerSize = 30.0;
 
-    path.lineTo(0, height - cornerSize);
-    path.quadraticBezierTo(0, height, cornerSize, height);
-    path.lineTo(width - cornerSize, height);
-    path.quadraticBezierTo(width, height, width, height - cornerSize);
-    path.lineTo(width, cornerSize);
-    path.quadraticBezierTo(width, 0, width - cornerSize, 0);
-    path.lineTo(cornerSize, cornerSize * 0.75);
-    path.quadraticBezierTo(0, cornerSize, 0, cornerSize * 2);
-
-    path.close();
+    final path = Path()
+      ..lineTo(0, height - cornerSize)
+      ..quadraticBezierTo(0, height, cornerSize, height)
+      ..lineTo(width - cornerSize, height)
+      ..quadraticBezierTo(width, height, width, height - cornerSize)
+      ..lineTo(width, cornerSize)
+      ..quadraticBezierTo(width, 0, width - cornerSize, 0)
+      ..lineTo(cornerSize, cornerSize * 0.75)
+      ..quadraticBezierTo(0, cornerSize, 0, cornerSize * 2)
+      ..close();
 
     return path;
   }

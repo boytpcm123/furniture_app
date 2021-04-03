@@ -7,9 +7,9 @@ import '../../../size_config.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    Key key,
     @required this.product,
     @required this.press,
+    Key key,
   }) : super(key: key);
 
   final Product product;
@@ -32,10 +32,13 @@ class ProductCard extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 1,
-                child: FadeInImage.assetNetwork(
-                  placeholder: "assets/spinner.gif",
-                  image: product.image,
-                  fit: BoxFit.cover,
+                child: Hero(
+                  tag: product.id,
+                  child: FadeInImage.assetNetwork(
+                    placeholder: 'assets/spinner.gif',
+                    image: product.image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Padding(
@@ -47,8 +50,8 @@ class ProductCard extends StatelessWidget {
               SizedBox(
                 height: defaultSize / 2,
               ),
-              Text("\$${product.price}"),
-              Spacer()
+              Text('\$${product.price}'),
+              const Spacer()
             ],
           ),
         ),

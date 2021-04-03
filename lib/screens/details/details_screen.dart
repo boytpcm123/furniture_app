@@ -37,7 +37,7 @@ class DetailsScreen extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          icon: SvgPicture.asset("assets/icons/bag.svg"),
+          icon: SvgPicture.asset('assets/icons/bag.svg'),
           onPressed: () {},
         ),
         SizedBox(

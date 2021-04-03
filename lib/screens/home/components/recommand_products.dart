@@ -20,7 +20,7 @@ class RecommandProducts extends StatelessWidget {
       padding: EdgeInsets.all(defaultSize * 2),
       child: GridView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: products.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount:
